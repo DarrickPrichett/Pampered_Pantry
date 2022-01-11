@@ -1,0 +1,20 @@
+{
+  "name": "Pampered_Pantry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarrickPrichett/Pampered_Pantry.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarrickPrichett/Pampered_Pantry/issues"
+  },
+  "homepage": "https://github.com/DarrickPrichett/Pampered_Pantry#readme"
+}
