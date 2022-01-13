@@ -1,12 +1,11 @@
 import { gql } from '@apollo/client';
-
-export const QUERY_PRODUCTS = gql`
+//adust file later when models are set
+export const QUERY_RECIPES = gql`
   query getProducts($category: ID) {
-    products(category: $category) {
+    recipes(category: $category) {
       _id
       name
       description
-      price
       quantity
       image
       category {
@@ -16,21 +15,12 @@ export const QUERY_PRODUCTS = gql`
   }
 `;
 
-export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
-    checkout(products: $products) {
-      session
-    }
-  }
-`;
-
-export const QUERY_ALL_PRODUCTS = gql`
+export const QUERY_ALL_RECIPES = gql`
   {
-    products {
+    recipes {
       _id
       name
       description
-      price
       quantity
       category {
         name
@@ -56,11 +46,10 @@ export const QUERY_USER = gql`
       orders {
         _id
         purchaseDate
-        products {
+        recipes {
           _id
           name
           description
-          price
           quantity
           image
         }
