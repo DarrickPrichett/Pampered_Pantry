@@ -11,7 +11,7 @@
   <p align="center">
     Recipes from our family to yours
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://darrickprichett.github.io/Pampered_Pantry"><strong>Explore the docs »</strong></a>
 <br />
 <br />
   </p>
@@ -67,7 +67,7 @@ Dustin Turpin - [@LinkedIn_handle](https://www.linkedin.com/linkedin_handle) - d
 Patricia Nelson - [PNelson@LinkedIn](https://www.linkedin.com/in/p-nelson/) - urbanearthymama@gmail.com
 
 ## Project Links: 
-[GitHub Repositry](https://github.com/DarrickPrichett/Pampered_Pantry)
+[GitHub Repository](https://github.com/DarrickPrichett/Pampered_Pantry)
 
 [Heroku](https://www.heroku.com/pampered_pantry/)
 
