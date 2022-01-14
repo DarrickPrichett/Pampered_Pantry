@@ -64,7 +64,7 @@ Douglas Peterson - [@LinkedIn_handle](https://www.linkedin.com/linkedin_handle) 
 
 Dustin Turpin - [@LinkedIn_handle](https://www.linkedin.com/linkedin_handle) - dustinturp@outlook.com
 
-Patricia Nelson - [PNelson@LinkedIn](www.linkedin.com/in/p-nelson/) - urbanearthymama@gmail.com
+Patricia Nelson - [PNelson@LinkedIn](https://www.linkedin.com/in/p-nelson/) - urbanearthymama@gmail.com
 
 ## Project Links: 
 [GitHub Repositry](https://github.com/DarrickPrichett/Pampered_Pantry)
