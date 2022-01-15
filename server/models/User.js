@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 // related models
 
+//add in user name
 
 const userSchema = new Schema({
     firstName: {
@@ -26,6 +27,11 @@ const userSchema = new Schema({
       required: true,
       minlength: 5
     },
+    username: {
+      type: String,
+      required: true
+    }
+
     // //orders: [Order.schema]
   });
   
