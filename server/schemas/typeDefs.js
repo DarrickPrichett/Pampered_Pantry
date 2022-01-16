@@ -1,4 +1,5 @@
 const { gql } = require('apollo-server-express');
+// match recipe model 
 
 const typeDefs = gql`
 type Category {
@@ -11,14 +12,7 @@ type Category {
     name: String
     description: String
     image: String
-    quantity: Int
     category: Category
-  }
-
-  type Order {
-    _id: ID
-    purchaseDate: String
-    recipes: [Recipe]
   }
 
   type User {
@@ -26,11 +20,6 @@ type Category {
     firstName: String
     lastName: String
     email: String
-    orders: [Order]
-  }
-
-  type Checkout {
-    session: ID
   }
 
   type Auth {

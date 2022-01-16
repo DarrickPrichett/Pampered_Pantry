@@ -5,7 +5,7 @@ import { UPDATE_RECIPES } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
 import { QUERY_RECIPES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
-import spinner from '../../assets/spinner.gif';
+import spinner from '../../assets/spinner2.gif';
 
 function RecipeList() {
   const [state, dispatch] = useStoreContext();

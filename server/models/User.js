@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 // related models
 
+//add in user name
 
 const userSchema = new Schema({
     firstName: {
@@ -19,13 +20,19 @@ const userSchema = new Schema({
     email: {
       type: String,
       required: true,
-      unique: true
+      unique: true,
+      match: [/.+@.+\..+/, 'Must match an email address!']
     },
     password: {
       type: String,
       required: true,
       minlength: 5
     },
+    username: {
+      type: String,
+      required: true
+    }
+
     // //orders: [Order.schema]
   });
   
