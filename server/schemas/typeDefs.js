@@ -1,24 +1,19 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-type Category {
+  type Category {
     _id: ID
     name: String
   }
 
   type Recipe {
     _id: ID
-    name: String
-    description: String
-    image: String
-    quantity: Int
+    recipeName: String
+    recipeText: String
+    username: String
+    steps: Int
+    ingredients: String
     category: Category
-  }
-
-  type Order {
-    _id: ID
-    purchaseDate: String
-    recipes: [Recipe]
   }
 
   type User {
@@ -26,7 +21,7 @@ type Category {
     firstName: String
     lastName: String
     email: String
-    orders: [Order]
+    recipes: [Recipe]
   }
 
   type Checkout {
@@ -46,11 +41,21 @@ type Category {
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    addUser(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+    ): Auth
+    updateUser(
+      firstName: String
+      lastName: String
+      email: String
+      password: String
+    ): User
     updateRecipe(_id: ID!, quantity: Int!): Recipe
     login(email: String!, password: String!): Auth
   }
-  `;
+`;
 
 module.exports = typeDefs;

@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 //adust file later when models are set
 export const QUERY_RECIPES = gql`
   query getProducts($category: ID) {
@@ -43,16 +43,13 @@ export const QUERY_USER = gql`
     user {
       firstName
       lastName
-      orders {
+      recipes {
         _id
-        purchaseDate
-        recipes {
-          _id
-          name
-          description
-          quantity
-          image
-        }
+        recipeName
+        recipeText
+        steps
+        ingredients
+        createdAt
       }
     }
   }
