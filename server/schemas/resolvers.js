@@ -1,6 +1,6 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models'); // add other models
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Recipe, Category } = require("../models"); // add other models
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -16,28 +16,28 @@ const resolvers = {
 
       if (name) {
         params.name = {
-          $regex: name
+          $regex: name,
         };
       }
 
-      return await Recipe.find(params).populate('category');
+      return await Recipe.find(params).populate("category");
     },
     recipe: async (parent, { _id }) => {
-      return await Recipe.findById(_id).populate('category');
+      return await Recipe.findById(_id).populate("category");
     },
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'orders.recipes',
-          populate: 'category'
+          path: "recipes",
+          populate: "category",
         });
 
-        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+        user.recipes.sort((a, b) => b.createdAt - a.createdAt);
 
         return user;
       }
 
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError("Not logged in");
     },
   },
   Mutation: {
@@ -49,34 +49,38 @@ const resolvers = {
     },
     updateUser: async (parent, args, context) => {
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+        return await User.findByIdAndUpdate(context.user._id, args, {
+          new: true,
+        });
       }
 
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError("Not logged in");
     },
-    updateRecipe: async (parent, { _id, quantity }) => {
-      const decrement = Math.abs(quantity) * -1;
+    updateRecipe: async (parent, { _id }) => {
+      return await Recipe.findByIdAndUpdate(
+        _id,
 
-      return await Recipe.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+        { new: true }
+      );
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
 
       return { token, user };
-    }
-  }
+    },
+  },
 };
 
 module.exports = resolvers;
