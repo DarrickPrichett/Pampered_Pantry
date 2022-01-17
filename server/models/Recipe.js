@@ -15,21 +15,29 @@ const recipeSchema = new Schema({
         type: String,
         required: true
     },
-    // steps: [],
+    // ingredients: [],
+    ingredients: {
+        type: Array,
+        required: 'please add in ingredients!'
+    },
     steps: {
         type: String,
         required: 'please add in steps!'
     },
-    // ingredients: [],
-    ingredients: {
-        type: String,
-        required: 'please add in ingredients!'
+    categories: {
+        type: Array,
+        enum: ['Main', 'Appetizers','Soup', 'Desserts','Sauce','Sides'],
+        required: 'Please include required field.'
     },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-        get: timestamp => dateFormat(timestamp)
-    },
+    // image: {
+    //     type: String,
+    //     required: 'Please include and image.'
+    // },
+    // createdAt: {
+    //     type: Date,
+    //     default: Date.now,
+    //     get: timestamp => dateFormat(timestamp)
+    // },
     //     reactions: [reactionSchema]
 },
     {
@@ -38,10 +46,6 @@ const recipeSchema = new Schema({
         }
     }
 );
-
-//ingredients
-
-//steps
 
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
