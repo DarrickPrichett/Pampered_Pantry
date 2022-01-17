@@ -52,10 +52,7 @@ function RecipeList() {
             <RecipeItem
               key={recipe._id}
               _id={recipe._id}
-              image={recipe.image}
               name={recipe.name}
-              price={recipe.price}
-              quantity={recipe.quantity}
             />
           ))}
         </div>
