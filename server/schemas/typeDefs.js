@@ -37,6 +37,7 @@ type Category {
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     updateUser(firstName: String, lastName: String, email: String, password: String): User
+    addRecipe(name: String, description: String, image: String): Recipe
     updateRecipe(_id: ID!, quantity: Int!): Recipe
     login(email: String!, password: String!): Auth
   }

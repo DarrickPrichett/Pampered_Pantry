@@ -28,10 +28,10 @@ const userSchema = new Schema({
       required: true,
       minlength: 5
     },
-    username: {
-      type: String,
-      required: true
-    }
+    // username: {
+    //   type: String,
+    //   required: true
+    // }
 
     // //orders: [Order.schema]
   });
@@ -51,6 +51,9 @@ const userSchema = new Schema({
     return await bcrypt.compare(password, this.password);
   };
   
+  userSchema.virtual("username").get(function(){
+    return this.firstName+" "+this.lastName
+  })
   const User = mongoose.model('User', userSchema);
   
   module.exports = User;

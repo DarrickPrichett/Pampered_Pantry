@@ -1,6 +1,7 @@
 const db = require('./connection');
 const { User, Recipe } = require('../models');
 
+db.once('open', async () => {
 
 // Recipes
 

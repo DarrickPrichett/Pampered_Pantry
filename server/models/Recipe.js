@@ -11,9 +11,9 @@ const recipeSchema = new Schema({
         type: String,
         required: 'Please enter recipe description!'
     },
-    username: {
-        type: String,
-        required: true
+    user_id: {
+        type: Schema.Types.ObjectId,
+        ref:  "User"
     },
     // steps: [],
     steps: {
