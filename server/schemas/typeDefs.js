@@ -8,10 +8,10 @@ const typeDefs = gql`
 
   type Recipe {
     _id: ID
-    recipeName: String
-    recipeText: String
+    name: String
+    description: String
     username: String
-    steps: Int
+    steps: String
     ingredients: String
     category: Category
   }
@@ -22,10 +22,6 @@ const typeDefs = gql`
     lastName: String
     email: String
     recipes: [Recipe]
-  }
-
-  type Checkout {
-    session: ID
   }
 
   type Auth {
@@ -53,7 +49,7 @@ const typeDefs = gql`
       email: String
       password: String
     ): User
-    updateRecipe(_id: ID!, quantity: Int!): Recipe
+    updateRecipe(_id: ID!): Recipe
     login(email: String!, password: String!): Auth
   }
 `;

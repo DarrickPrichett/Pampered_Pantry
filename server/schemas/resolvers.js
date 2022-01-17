@@ -28,11 +28,11 @@ const resolvers = {
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: "orders.recipes",
+          path: "recipes",
           populate: "category",
         });
 
-        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+        user.recipes.sort((a, b) => b.createdAt - a.createdAt);
 
         return user;
       }
@@ -56,12 +56,10 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    updateRecipe: async (parent, { _id, quantity }) => {
-      const decrement = Math.abs(quantity) * -1;
-
+    updateRecipe: async (parent, { _id }) => {
       return await Recipe.findByIdAndUpdate(
         _id,
-        { $inc: { quantity: decrement } },
+
         { new: true }
       );
     },

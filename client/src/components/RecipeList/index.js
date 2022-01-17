@@ -53,7 +53,7 @@ function RecipeList() {
               key={recipe._id}
               _id={recipe._id}
               //  image={recipe.image}
-              name={recipe.recipeName}
+              name={recipe.name}
             />
           ))}
         </div>
