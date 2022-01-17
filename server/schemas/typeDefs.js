@@ -13,6 +13,7 @@ const typeDefs = gql`
     username: String
     steps: String
     ingredients: String
+
     category: Category
   }
 
@@ -22,6 +23,7 @@ const typeDefs = gql`
     lastName: String
     email: String
     recipes: [Recipe]
+
   }
 
   type Auth {
