@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models'); // add other models
+const { User, Recipe } = require('../models'); // add other models
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -53,6 +53,12 @@ const resolvers = {
       }
 
       throw new AuthenticationError('Not logged in');
+    },
+    addRecipe: async (parent, args) => {
+      const user = await Recipe.create(args);
+      const token = signToken(user);
+
+      return { token, recipe };
     },
     updateRecipe: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;

@@ -43,15 +43,13 @@ export const QUERY_USER = gql`
     user {
       firstName
       lastName
-      orders {
+      recipes {
         _id
-        purchaseDate
-        recipes {
-          _id
+        name
+        description
+        quantity
+        category {
           name
-          description
-          quantity
-          image
         }
       }
     }
