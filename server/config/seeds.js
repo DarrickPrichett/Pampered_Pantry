@@ -1,9 +1,48 @@
 const db = require("./connection");
 const { User, Recipe } = require("../models");
 
-// Recipes
+db.once('open', async () => {
+  await Category.deleteMany();
 
-// Users
+  const categories = await Category.insertMany([
+    { name: 'Breakfast' },
+    { name: 'Brunch' },
+    { name: 'Lunch' },
+    { name: 'Dinner' },
+    { name: 'Deserts' },
+    { name: 'Italian' }
+  ]);
+
+  console.log('categories seeded');
+
+  await Recipe.deleteMany();
+
+  const Recipes = await Recipe.insertMany([
+    {
+      name: 'Cream of Wheat',
+      description: 'The best tasting breakfast food.',
+      category: categories[0]._id,
+      steps: 'Put items in a bowl',
+      ingredients: 'cream of wheat, milk, maple syrup'
+    },
+    {
+      name: 'PBJ',
+      description: 'The go to Lunch.',
+      category: categories[2]._id,
+      steps: '123123',
+      ingredients: '123123'
+    },
+    {
+      name: 'Brussel Sprouts',
+      description: 'So tasty.',
+      category: categories[3]._id,
+      steps: 'Brussel sprouts in tasty food out',
+      ingredients: 'All the sprouts'
+    }
+  ]);
+
+  console.log('Recipes seeded');
+
 await User.deleteMany();
 
 await User.create({
@@ -13,7 +52,7 @@ await User.create({
   password: "password12345",
   orders: [
     {
-      products: [products[0]._id, products[0]._id, products[1]._id],
+      recipes: [recipes[0]._id, recipes[0]._id, recipes[1]._id],
     },
   ],
 });
@@ -28,3 +67,4 @@ await User.create({
 console.log("users seeded");
 
 process.exit();
+});
