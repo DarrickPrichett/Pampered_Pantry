@@ -49,19 +49,14 @@ await User.create({
   firstName: "Pamela",
   lastName: "Washington",
   email: "pamela@testmail.com",
-  password: "password12345",
-  orders: [
-    {
-      recipes: [recipes[0]._id, recipes[0]._id, recipes[1]._id],
-    },
-  ],
+  password: "password12345"
 });
 
 await User.create({
   firstName: "Elijah",
   lastName: "Holt",
   email: "eholt@testmail.com",
-  password: "password12345",
+  password: "password12345"
 });
 
 console.log("users seeded");
