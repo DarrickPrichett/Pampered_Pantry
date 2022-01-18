@@ -62,7 +62,7 @@ Darrick Prichett - [@LinkedIn_handle](https://www.linkedin.com/linkedin_handle) 
 
 Douglas Peterson - [@LinkedIn_handle](https://www.linkedin.com/linkedin_handle) - douglaspeterson6@gmail.com
 
-Dustin Turpin - [@LinkedIn_handle](https://www.linkedin.com/linkedin_handle) - dustinturp@outlook.com
+Dustin Turpin - [@dustinturp](https://github.com/dustinturp) - 
 
 Patricia Nelson - [PNelson@LinkedIn](https://www.linkedin.com/in/p-nelson/) - urbanearthymama@gmail.com
 

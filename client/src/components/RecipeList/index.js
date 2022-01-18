@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import RecipeItem from '../RecipeItem';
-import { useStoreContext } from '../../utils/GlobalState';
-import { UPDATE_RECIPES } from '../../utils/actions';
-import { useQuery } from '@apollo/client';
-import { QUERY_RECIPES } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import spinner from '../../assets/spinner2.gif';
+import React, { useEffect } from "react";
+import RecipeItem from "../RecipeItem";
+import { useStoreContext } from "../../utils/GlobalState";
+import { UPDATE_RECIPES } from "../../utils/actions";
+import { useQuery } from "@apollo/client";
+import { QUERY_RECIPES } from "../../utils/queries";
+import { idbPromise } from "../../utils/helpers";
+import spinner from "../../assets/spinner.gif";
 
 function RecipeList() {
   const [state, dispatch] = useStoreContext();
@@ -21,10 +21,10 @@ function RecipeList() {
         recipes: data.recipes,
       });
       data.recipes.forEach((recipe) => {
-        idbPromise('recipes', 'put', recipe);
+        idbPromise("recipes", "put", recipe);
       });
     } else if (!loading) {
-      idbPromise('recipes', 'get').then((recipes) => {
+      idbPromise("recipes", "get").then((recipes) => {
         dispatch({
           type: UPDATE_RECIPES,
           recipes: recipes,
@@ -44,25 +44,23 @@ function RecipeList() {
   }
 
   return (
-    <div className="my-2">
+    <div className='my-2'>
       <h2>Our Recipes:</h2>
       {state.recipes.length ? (
-        <div className="flex-row">
+        <div className='flex-row'>
           {filterRecipes().map((recipe) => (
             <RecipeItem
               key={recipe._id}
               _id={recipe._id}
-              image={recipe.image}
+              //  image={recipe.image}
               name={recipe.name}
-              price={recipe.price}
-              quantity={recipe.quantity}
             />
           ))}
         </div>
       ) : (
-        <h3>You haven't added any recipes yet!</h3>
+        <h3>No Recipes have been added yet!</h3>
       )}
-      {loading ? <img src={spinner} alt="loading" /> : null}
+      {loading ? <img src={spinner} alt='loading' /> : null}
     </div>
   );
 }

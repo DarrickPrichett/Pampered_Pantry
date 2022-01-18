@@ -1,8 +1,7 @@
-const { gql } = require('apollo-server-express');
-// match recipe model 
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-type Category {
+  type Category {
     _id: ID
     name: String
   }
@@ -11,7 +10,10 @@ type Category {
     _id: ID
     name: String
     description: String
-    image: String
+    username: String
+    steps: String
+    ingredients: String
+
     category: Category
   }
 
@@ -20,6 +22,8 @@ type Category {
     firstName: String
     lastName: String
     email: String
+    recipes: [Recipe]
+
   }
 
   type Auth {
@@ -41,6 +45,6 @@ type Category {
     updateRecipe(_id: ID!, quantity: Int!): Recipe
     login(email: String!, password: String!): Auth
   }
-  `;
+`;
 
 module.exports = typeDefs;
