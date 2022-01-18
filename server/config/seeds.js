@@ -17,7 +17,7 @@ db.once('open', async () => {
 
   await Recipe.deleteMany();
 
-  const Recipes = await Recipe.insertMany([
+  const recipes = await Recipe.insertMany([
     {
       name: 'Cream of Wheat',
       description: 'The best tasting breakfast food.',
