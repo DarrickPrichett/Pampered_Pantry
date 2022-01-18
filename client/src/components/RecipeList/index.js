@@ -11,8 +11,10 @@ function RecipeList() {
   const [state, dispatch] = useStoreContext();
 
   const { currentCategory } = state;
-
-  const { loading, data } = useQuery(QUERY_RECIPES);
+console.log(currentCategory);
+  const { loading, data } = useQuery(QUERY_RECIPES, {
+    variables: { category: currentCategory}
+  });
 
   useEffect(() => {
     if (data) {
@@ -44,7 +46,7 @@ function RecipeList() {
   }
 
   return (
-    <div className='my-2'>
+    <div className='my-2 recipe-box'>
       <h2>Our Recipes:</h2>
       {state.recipes.length ? (
         <div className='flex-row'>
