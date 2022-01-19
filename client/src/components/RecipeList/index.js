@@ -46,8 +46,8 @@ console.log(currentCategory);
   }
 
   return (
-    <div className='my-2 recipe-box'>
-      <h2>Our Recipes:</h2>
+    <>
+          <h2>Our Recipes:</h2>
       {state.recipes.length ? (
         <div className='flex-row'>
           {filterRecipes().map((recipe) => (
@@ -63,7 +63,7 @@ console.log(currentCategory);
         <h3>No Recipes have been added yet!</h3>
       )}
       {loading ? <img src={spinner} alt='loading' /> : null}
-    </div>
+    </>
   );
 }
 

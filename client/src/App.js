@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Paper from "@mui/material/Paper";
 import {
   ApolloClient,
   InMemoryCache,
@@ -44,6 +45,7 @@ function App() {
         <div>
           <StoreProvider>
             <Nav />
+            <Paper sx={{ width: '75%' }} elevation={3}>
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/login' component={Login} />
@@ -53,6 +55,7 @@ function App() {
               <Route exact path='/AddRecipe' component={AddRecipe} />
               <Route component={NoMatch} />
             </Switch>
+            </Paper>
           </StoreProvider>
         </div>
       </Router>
