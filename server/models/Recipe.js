@@ -12,9 +12,7 @@ const recipeSchema = new Schema({
     type: String,
     required: "Please enter recipe description!",
   },
-  username: {
-    type: String,
-  },
+
   // steps: [],
   steps: {
     type: String,

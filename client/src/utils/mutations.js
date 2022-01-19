@@ -23,7 +23,9 @@ export const ADD_RECIPE = gql`
       description: $description
       steps: $steps
       ingredients: $ingredients
-    )
+    ) {
+      _id
+    }
   }
 `;
 

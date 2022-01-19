@@ -12,8 +12,14 @@ function AddRecipe(props) {
     ingredients: "",
   });
   const [addRecipe] = useMutation(ADD_RECIPE);
-
+  console.log(addRecipe);
   const handleFormSubmit = async (event) => {
+    console.log(
+      formState.name +
+        formState.description +
+        formState.steps +
+        formState.ingredients
+    );
     event.preventDefault();
     const mutationResponse = await addRecipe({
       variables: {
@@ -23,8 +29,8 @@ function AddRecipe(props) {
         ingredients: formState.ingredients,
       },
     });
-    //const token = mutationResponse.data.addRecipe.token;
-    // Auth.login(token);
+    const token = mutationResponse.data.addRecipe.token;
+    Auth.login(token);
   };
 
   const handleChange = (event) => {
@@ -40,7 +46,7 @@ function AddRecipe(props) {
       <h2>Add Recipe</h2>
       <form onSubmit={handleFormSubmit}>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='firstName'>Recipe Name:</label>
+          <label htmlFor='name'>Recipe Name:</label>
           <input
             placeholder='Recipe'
             name='name'
