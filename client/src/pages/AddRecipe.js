@@ -47,15 +47,7 @@ function AddRecipe(props) {
     });
   };
 
-  const handleCategory = (event) => {
-    const select = event.target
-    const category = select.options[select.selectedIndex].value
-    console.log(category)
-    setFormState({
-      ...formState,
-      category_id: category,
-    });
-  }
+  
   return (
     <div className='container my-1'>
       <h2 className="bold">Add Recipe</h2>
@@ -127,6 +119,11 @@ label ='ingredients'
         <div className='flex-row space-between my-2'>
           <Select onChange={handleCategory}
           label="Category:"
+          name='category'
+          type='category'
+          placeholder='Category'
+          id='category'
+          variant='standard'
           >
             {allCategories?.map(category => (
                <MenuItem value={category._id}>{category.name}</MenuItem>
