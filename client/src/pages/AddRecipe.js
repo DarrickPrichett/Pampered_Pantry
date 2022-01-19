@@ -16,9 +16,9 @@ function AddRecipe(props) {
   const handleFormSubmit = async (event) => {
     console.log(
       formState.name +
-        formState.description +
-        formState.steps +
-        formState.ingredients
+      formState.description +
+      formState.steps +
+      formState.ingredients
     );
     event.preventDefault();
     const mutationResponse = await addRecipe({
@@ -41,12 +41,15 @@ function AddRecipe(props) {
     });
   };
 
+  const handleCategory = (event) => {
+    
+  }
   return (
     <div className='container my-1'>
-      <h2>Add Recipe</h2>
+      <h2 className="bold">Add Recipe</h2>
       <form onSubmit={handleFormSubmit}>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='name'>Recipe Name:</label>
+          <label className="recipe-box" htmlFor='name'>Recipe Name:</label>
           <input
             placeholder='Recipe'
             name='name'
@@ -56,7 +59,7 @@ function AddRecipe(props) {
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='description'>Description:</label>
+          <label className="recipe-box" htmlFor='description'>Description:</label>
           <input
             placeholder='description'
             name='description'
@@ -66,7 +69,7 @@ function AddRecipe(props) {
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='steps'>Steps:</label>
+          <label className="recipe-box" htmlFor='steps'>Steps:</label>
           <input
             placeholder='Recipe Steps'
             name='steps'
@@ -76,7 +79,7 @@ function AddRecipe(props) {
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='ingredients'>Ingredients:</label>
+          <label className="recipe-box" htmlFor='ingredients'>Ingredients:</label>
           <input
             placeholder='ingredients'
             name='ingredients'
@@ -85,6 +88,17 @@ function AddRecipe(props) {
             onChange={handleChange}
           />
         </div>
+        <div className='flex-row space-between my-2'>
+          <label className="recipe-box" htmlFor='category'>Category:</label>
+          <select onChange={handleChange}>
+            <option>Breakfast</option>
+            <option>Brunch</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+            <option>Desserts</option>
+          </select>
+        </div>
+
         <div className='flex-row flex-end'>
           <button type='submit'>Submit</button>
         </div>
