@@ -7,7 +7,7 @@ import {
 } from "../../utils/actions";
 import { QUERY_CATEGORIES } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
-
+import Button from "@mui/material/Button";
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
 
@@ -45,14 +45,15 @@ function CategoryMenu() {
 <>
       <h2>Choose a Category:</h2>
       {categories.map((item) => (
-        <button
+        <Button
+          color="warning"
           key={item._id}
           onClick={() => {
             handleClick(item._id);
           }}
         >
           {item.name}
-        </button>
+        </Button>
       ))}
     </>
   );
