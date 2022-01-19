@@ -14,7 +14,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.",
+    "react-scripts": "3.4.1",
     "@emotion/core": "^11.0.0",
     "@emotion/css": "^11.5.0",
     "@emotion/react": "^11.5.0",
