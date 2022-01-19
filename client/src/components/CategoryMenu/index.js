@@ -46,6 +46,7 @@ function CategoryMenu() {
       <h2>Choose a Category:</h2>
       {categories.map((item) => (
         <Button
+        variant="contained"
           color="warning"
           key={item._id}
           onClick={() => {

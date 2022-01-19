@@ -11,7 +11,10 @@ function RecipeItem(item) {
 
   return (
     <div className='card px-1 py-1'>
-      <Link href={`/recipes/${_id}`}>
+      <Link
+      color="error"
+      underline="none"
+      href={`/recipes/${_id}`}>
         <p>{name}</p>
       </Link>
     </div>

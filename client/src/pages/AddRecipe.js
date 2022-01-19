@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_RECIPE } from "../utils/mutations";
-
+import TextField from "@mui/material/TextField";
 function AddRecipe(props) {
   const [formState, setFormState] = useState({
     name: "",
@@ -46,8 +46,10 @@ function AddRecipe(props) {
       <h2>Add Recipe</h2>
       <form onSubmit={handleFormSubmit}>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='name'>Recipe Name:</label>
-          <input
+     //     <label htmlFor='name'>Recipe Name:</label>
+          <TextField
+           label="Recipe Name"
+    
             placeholder='Recipe'
             name='name'
             type='name'
@@ -56,8 +58,9 @@ function AddRecipe(props) {
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='description'>Description:</label>
-          <input
+       //   <label htmlFor='description'>Description:</label>
+          <TextField
+          multiline
             placeholder='description'
             name='description'
             type='description'
