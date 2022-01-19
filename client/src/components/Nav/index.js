@@ -11,7 +11,7 @@ function Nav() {
             <Link to={"/addRecipe"}>Add Recipe</Link>
           </li>
           <li className='mx-1'>
-            <Link to='/myRecipes'>My Recipes</Link>
+            <Link to={'/myRecipes'}>My Recipes</Link>
           </li>
 
           <li className='mx-1'>
