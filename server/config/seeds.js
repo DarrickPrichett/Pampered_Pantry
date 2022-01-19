@@ -10,7 +10,6 @@ db.once('open', async () => {
     { name: 'Lunch' },
     { name: 'Dinner' },
     { name: 'Deserts' },
-    { name: 'Italian' }
   ]);
 
   console.log('categories seeded');
