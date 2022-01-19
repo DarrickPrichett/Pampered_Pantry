@@ -5,7 +5,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_RECIPES } from "../utils/actions";
 import { QUERY_RECIPES } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
-import spinner from "../assets/spinner.gif";
+import Skeleton from "@mui/material/Skeleton";
 
 
 function Detail() {
@@ -63,7 +63,7 @@ function Detail() {
           /> */}
         </div>
       ) : null}
-      {loading ? <img src={spinner} alt='loading' /> : null}
+      {loading ? <Skeleton variant="rectangular"/> : null}
     </>
   );
 }
