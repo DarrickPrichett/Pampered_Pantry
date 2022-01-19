@@ -65,6 +65,19 @@ db.once('open', async () => {
       category: categories[3]._id,
       steps: 'Place fillets in a single layer on a well-greased bake and serve platter, 16x10 inches. Brush fillets with lemon juice and let stand for 10 minutes. Combine remaining ingredients. Broil fillets about 4 inches from source of heat for 6-8 minutes or until fillets flake easily with a fork. Remove from heat & spread with cheese mixture. Broil 2-3 minutes longer or until lightly browned. Makes 6 servings ',
       ingredients: '2 lbs. Sole, Snapper or other fillets 2 T lemon juice ½ C grated Parmesan cheese ¼ C butter, softened 3 T mayonnaise 3T chopped green onion ¼ t salt dash liquid hot pepper sauce'
+    },    {
+      name: 'Breakfast Brunch Dish',
+      description: 'Make the night before and refrigerate',
+      category: categories[0]._id,
+      steps: 'Fry sausage into crumbles & drain. Dice links. Beat eggs & add rest of ingredients. Place in greased 8x10 pan overnight (or just refrigerate in bowl) Bake at 350 degrees for 45 minutes.  ',
+      ingredients: '6 eggs 2 c milk 1 t salt 1 t dry mustard 1 lb mild pork sausage or pre-cooked sausage links (Jimmy Dean maple-flavored links!!) 1 c grated sharp cheddar cheese 4-5 slices bread, cubed'
+    },
+    {
+      name: 'Mungo Salad',
+      description: 'This makes a lot, but it disappears in a hurry. Great to take to pot-luck or picnic.',
+      category: categories[2]._id,
+      steps: 'Prepare lettuce & mix with Prosciutto or bacon, cheeses, & green onions. ½ hour before serving, toss with dressing & let stand at room temperature to let flavors develop. ',
+      ingredients: '1 head iceberg lettuce 1 head Romaine lettuce tear lettuces into bite-sized pieces ¼-1/3 lb Provolone cheese, shredded 1/8 c Romano cheese, grated ¼ c Parmesan cheese, grated ¼ lb Prosciutto ham, chopped & sautéed (we prefer crisp bacon –use 1 lb & crumble) 1 bunch green onions or scallions, chopped 1 pkg Good Seasons Italian dressing mix, prepared as directed EXCEPT use olive oil—only ½ c (less than mix calls for), use white wine vinegar & add 2 T sugar. Prepare & refrigerate.'
     },
   ]);
 
