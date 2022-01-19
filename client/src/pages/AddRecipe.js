@@ -4,6 +4,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_RECIPE } from "../utils/mutations";
 import { QUERY_CATEGORIES } from "../utils/queries";
+
+import {TextField, Button} from "@mui/material";
 function AddRecipe(props) {
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
   const allCategories = categoryData?.categories||[]
@@ -59,43 +61,67 @@ function AddRecipe(props) {
       <h2 className="bold">Add Recipe</h2>
       <form onSubmit={handleFormSubmit}>
         <div className='flex-row space-between my-2'>
-          <label className="recipe-box" htmlFor='name'>Recipe Name:</label>
-          <input
+
+          <TextField
+           label="Recipe Name"
+
             placeholder='Recipe'
             name='name'
             type='name'
             id='name'
+            variant='standard'
             onChange={handleChange}
+            sx={{width:"100%"}}
+
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label className="recipe-box" htmlFor='description'>Description:</label>
-          <input
+
+ 
+          <TextField
+          multiline
+          label='description'
+
             placeholder='description'
             name='description'
             type='description'
             id='description'
+            variant='standard'
             onChange={handleChange}
+            sx={{width:"100%"}}
+
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label className="recipe-box" htmlFor='steps'>Steps:</label>
-          <input
+
+  
+          <TextField
+          label='Recipe Steps'
+          multiline
+
             placeholder='Recipe Steps'
             name='steps'
             type='steps'
             id='steps'
             onChange={handleChange}
+            variant='standard'
+            sx={{width:"100%"}}
+
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label className="recipe-box" htmlFor='ingredients'>Ingredients:</label>
-          <input
+
+            <TextField
+            sx={{width:"100%"}}
+
+label ='ingredients'
+            multiline
             placeholder='ingredients'
             name='ingredients'
             type='ingredients'
             id='ingredients'
             onChange={handleChange}
+            variant='standard'
           />
         </div>
         <div className='flex-row space-between my-2'>
@@ -109,7 +135,9 @@ function AddRecipe(props) {
         </div>
 
         <div className='flex-row flex-end'>
-          <button type='submit'>Submit</button>
+          <Button type='submit'
+            variant="contained"
+            color="warning">Submit</Button>
         </div>
       </form>
     </div>
