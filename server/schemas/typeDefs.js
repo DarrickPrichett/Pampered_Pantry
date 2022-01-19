@@ -55,6 +55,7 @@ const typeDefs = gql`
       description: String!
       steps: String!
       ingredients: String!
+      category_id: ID!
     ): Recipe
     updateRecipe(_id: ID!, quantity: Int!): Recipe
     login(email: String!, password: String!): Auth

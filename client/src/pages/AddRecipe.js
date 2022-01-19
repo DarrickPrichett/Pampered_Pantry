@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_RECIPE } from "../utils/mutations";
-
+import { QUERY_CATEGORIES } from "../utils/queries";
 function AddRecipe(props) {
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+  const allCategories = categoryData?.categories||[]
   const [formState, setFormState] = useState({
     name: "",
     description: "",
     steps: "",
     ingredients: "",
+    category_id: "",
   });
   const [addRecipe] = useMutation(ADD_RECIPE);
   console.log(addRecipe);
@@ -27,6 +30,7 @@ function AddRecipe(props) {
         description: formState.description,
         steps: formState.steps,
         ingredients: formState.ingredients,
+        category_id: formState.category_id,
       },
     });
     const token = mutationResponse.data.addRecipe.token;
@@ -42,7 +46,13 @@ function AddRecipe(props) {
   };
 
   const handleCategory = (event) => {
-    
+    const select = event.target
+    const category = select.options[select.selectedIndex].value
+    console.log(category)
+    setFormState({
+      ...formState,
+      category_id: category,
+    });
   }
   return (
     <div className='container my-1'>
@@ -90,12 +100,11 @@ function AddRecipe(props) {
         </div>
         <div className='flex-row space-between my-2'>
           <label className="recipe-box" htmlFor='category'>Category:</label>
-          <select onChange={handleChange}>
-            <option>Breakfast</option>
-            <option>Brunch</option>
-            <option>Lunch</option>
-            <option>Dinner</option>
-            <option>Desserts</option>
+          <select onChange={handleCategory}>
+            {allCategories?.map(category => (
+               <option value={category._id}>{category.name}</option>
+            ))}
+           
           </select>
         </div>
 
