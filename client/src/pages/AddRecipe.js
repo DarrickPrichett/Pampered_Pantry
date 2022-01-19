@@ -56,6 +56,8 @@ function AddRecipe(props) {
             id='name'
             variant='standard'
             onChange={handleChange}
+            sx={{width:"50%"}}
+
           />
         </div>
         <div className='flex-row space-between my-2'>
@@ -69,6 +71,8 @@ function AddRecipe(props) {
             id='description'
             variant='standard'
             onChange={handleChange}
+            sx={{width:"50%"}}
+
           />
         </div>
         <div className='flex-row space-between my-2'>
@@ -82,11 +86,15 @@ function AddRecipe(props) {
             id='steps'
             onChange={handleChange}
             variant='standard'
+            sx={{width:"50%"}}
+
           />
         </div>
         <div className='flex-row space-between my-2'>
             <TextField
-            label ='ingredients'
+            sx={{width:"50%"}}
+
+label ='ingredients'
             multiline
             placeholder='ingredients'
             name='ingredients'

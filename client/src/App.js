@@ -45,7 +45,7 @@ function App() {
         <div>
           <StoreProvider>
             <Nav />
-            <Paper sx={{ width: '75%' , mx: "auto"}} elevation={3}>
+            <Paper sx={{ width: '75%' , mx: "auto", p:'2rem'}} elevation={3}>
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/login' component={Login} />

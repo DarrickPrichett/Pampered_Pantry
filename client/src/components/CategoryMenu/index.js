@@ -46,6 +46,7 @@ function CategoryMenu() {
       <h2>Choose a Category:</h2>
       {categories.map((item) => (
         <Button
+        sx={{mx:"2rem"}}
         variant="contained"
           color="warning"
           key={item._id}

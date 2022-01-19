@@ -51,6 +51,7 @@ function Login(props) {
         <div className="flex-row space-between my-2">
           <TextField
           label='Password:'
+          variant='standard'
             placeholder="******"
             name="password"
             type="password"
