@@ -93,6 +93,20 @@ db.once('open', async () => {
       steps: 'Melt ½ C butter and candy bars on slow heat. Beat remaining ½ C butter, eggs, and sugar. Beat well. Add flour &  baking soda alternately with buttermilk until smooth. Add candy mixture and mix well. Stir in nuts and vanilla. Pour into well-greased and floured tube pan and bake at 350 degrees for 1 hour and 20 minutes. ',
       ingredients: '6 Milky Way bars 1 C butter 4 eggs 2 ½ C sifted flour ½ t baking soda 2 C sugar 1 ¼ C buttermilk 1 t vanilla 1 C chopped nuts       '
     },
+    {
+      name: 'Sour Cream Chocolate Chip Cake',
+      description: 'So tasty.',
+      category: categories[4]._id,
+      steps: 'Blend butter with 1 C sugar, then beat in eggs one at a time. Mix flour, baking powder, soda & cinnamon, then blend into creamed mixture. Add sour cream.Pour batter into greased and floured 9”x13” pan. Scatter chocolate chips evenly over batter, then sprinkle with the remaining 1 T of sugar. Bake in 350 degree oven for 35 minutes, or till cake just begins to pull away from pan. Do not refrigerate. ',
+      ingredients: '6T soft butter 1 C plus 1 T sugar 2 eggs 1 ½ C flour 1 ½ t baking powder 1 t baking soda 1 t cinnamon 1 C sour cream 1 pkg. (6 oz.) chocolate chips   '
+    },
+    {
+      name: 'French Market Soup',
+      description: 'Hearty and warming on a cold day. This makes a striking gift!',
+      category: categories[2]._id,
+      steps: 'Wash beans & soak overnight in water at least 2 inches over top of the beans. Drain beans; add 2 qts. Water, ham & hock, salt and pepper. Cover and bring to a boil; reduce heat & simmer 1 ½ hours or till beans are tender. Add remaining ingredients; simmer 30 minutes, stirring occasionally. Makes 6 servings. This makes a striking gift. Layer several colorful varieties of beans and lentils in a pint canning jar, put on lid tightly, and attach copy of the recipe with twine, yarn, raffia, etc. Cover the lid with cloth if you wish. To make it look even more interesting, hold the jar at an angle when you layer in the beans, so the finished jar shows angles of colors and textures.',
+      ingredients: '2 C French Market soup mix ( 2 C assorted dried beans) 2 quarts water 1 ham hock 1 lb. ham, diced (optional) 1 lb. ham, diced (optional) 2 large ribs celery, chopped fine 1 16 oz. can tomatoes, chopped 1 10 oz. can Rotel tomatoes, chopped 1 clove garlic, minced½ t salt (or to taste) ¼ t pepper 2 t ham soup base, if desired'
+    },
   ]);
 
   console.log('Recipes seeded');
