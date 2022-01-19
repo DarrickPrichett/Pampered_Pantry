@@ -107,6 +107,21 @@ db.once('open', async () => {
       steps: 'Wash beans & soak overnight in water at least 2 inches over top of the beans. Drain beans; add 2 qts. Water, ham & hock, salt and pepper. Cover and bring to a boil; reduce heat & simmer 1 ½ hours or till beans are tender. Add remaining ingredients; simmer 30 minutes, stirring occasionally. Makes 6 servings. This makes a striking gift. Layer several colorful varieties of beans and lentils in a pint canning jar, put on lid tightly, and attach copy of the recipe with twine, yarn, raffia, etc. Cover the lid with cloth if you wish. To make it look even more interesting, hold the jar at an angle when you layer in the beans, so the finished jar shows angles of colors and textures.',
       ingredients: '2 C French Market soup mix ( 2 C assorted dried beans) 2 quarts water 1 ham hock 1 lb. ham, diced (optional) 1 lb. ham, diced (optional) 2 large ribs celery, chopped fine 1 16 oz. can tomatoes, chopped 1 10 oz. can Rotel tomatoes, chopped 1 clove garlic, minced½ t salt (or to taste) ¼ t pepper 2 t ham soup base, if desired'
     },
+    {
+      name: 'San Francisco Seafood Quiche',
+      description: 'Great make ahead dish',
+      category: categories[1]._id,
+      steps: 'Combine crab meat, shrimp, chopped Swiss cheese, celery, and onions. Divide seafood mixture equally between pie shells. Combine mayonnaise, flour, white wine, and eggs. Divide mayonnaise mixture equally between pie shells, pouring evenly over seafood. Bake pies in preheated 350 degree oven for 35-40 minutes or until a silver knife inserted into middle comes out clean. Cut into wedges to serve. You can refrigerate if you made these ahead. Before serving, remove from refrigerator and allow 1 hour to come to room temperature, then reheat in 300 degree oven for 15 minutes. This can also be frozen before baking; cover with plastic wrap & freeze hard, then overwrap with foil. When ready to use, unwrap & bake frozen in preheated 350 degree oven for 50 minutes.(makes 2 pies, 4-6 servings each)',
+      ingredients: '2 9” frozen pie shells (or make your own) 6 oz. pkg. frozen king crab meat, thawed  and drained 6 oz. pkg. frozen king crab meat, thawed and drained 1 ½ C shelled, cooked, chopped shrimp (or use canned shrimp) 8 oz. pkg. Swiss cheese. Chopped ½ C finely chopped celery ½ C finely chopped scallions or green onions 1 C mayonnaise 2 T flour 1 C dry white wine 4 slightly-beaten eggs       '
+    },
+    {
+      name: 'Hash Brown Casserole',
+      description: 'Make the night before for an lazy morning',
+      category: categories[0]._id,
+      steps: 'Mix all together & bake at least 1 hour at 400 degrees. French fried onions or crushed corn flakes for topping, sprinkle with paprika.',
+      ingredients: '2 lb. bag hash browns, thawed 1 c. shredded sharp cheddar cheese 1 c. sour cream 1 can cream of chicken soup ½-1 c. chopped onion ½ c. melted butter chopped red & green pepper for color      '
+    },
+    
   ]);
 
   console.log('Recipes seeded');
