@@ -117,7 +117,7 @@ label ='ingredients'
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <Select onChange={handleCategory}
+          <Select onChange={handleChange}
           label="Category:"
           name='category'
           type='category'
