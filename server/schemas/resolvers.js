@@ -61,8 +61,9 @@ const resolvers = {
       if(context.user) {
       console.log("adding success");
       console.log(args);
-      const recipe = await Recipe.create({...args, user_id: context.user._id});
+      const recipe = await Recipe.create(args);
       console.log(recipe);
+      await User.findByIdAndUpdate(context.user._id, { $push: { recipes: recipe } });
       return recipe._id;
       // const token = signToken(user)
     }

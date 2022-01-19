@@ -5,7 +5,7 @@ import Auth from "../utils/auth";
 import { ADD_RECIPE } from "../utils/mutations";
 import { QUERY_CATEGORIES } from "../utils/queries";
 
-import {TextField, Button} from "@mui/material";
+import {TextField, Button, Select, MenuItem} from "@mui/material";
 function AddRecipe(props) {
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
   const allCategories = categoryData?.categories||[]
@@ -32,7 +32,7 @@ function AddRecipe(props) {
         description: formState.description,
         steps: formState.steps,
         ingredients: formState.ingredients,
-        category_id: formState.category_id,
+        category: formState.category,
       },
     });
     const token = mutationResponse.data.addRecipe.token;
@@ -125,13 +125,14 @@ label ='ingredients'
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label className="recipe-box" htmlFor='category'>Category:</label>
-          <select onChange={handleCategory}>
+          <Select onChange={handleCategory}
+          label="Category:"
+          >
             {allCategories?.map(category => (
-               <option value={category._id}>{category.name}</option>
+               <MenuItem value={category._id}>{category.name}</MenuItem>
             ))}
            
-          </select>
+          </Select>
         </div>
 
         <div className='flex-row flex-end'>
