@@ -33,7 +33,7 @@ function AddRecipe(props) {
         description: formState.description,
         steps: formState.steps,
         ingredients: formState.ingredients,
-        category: formState.category.index,
+        category: formState.category,
       },
     });
     const token = mutationResponse.data.addRecipe.token;
