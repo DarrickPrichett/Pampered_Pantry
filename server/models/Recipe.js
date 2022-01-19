@@ -33,10 +33,9 @@ const recipeSchema = new Schema({
   category: {
     type: Schema.Types.ObjectId,
     ref: "Category",
-    required: true,
+    //required: true,
   },
 });
-
 
 const Recipe = mongoose.model("Recipe", recipeSchema);
 

@@ -57,10 +57,10 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     addRecipe: async (parent, args) => {
-      const user = await Recipe.create(args);
-      const token = signToken(user);
+      const recipe = await Recipe.create(args);
+      // const token = signToken(user);
 
-      return { token, recipe };
+      return { recipe };
     },
     updateRecipe: async (parent, { _id }) => {
       return await Recipe.findByIdAndUpdate(
