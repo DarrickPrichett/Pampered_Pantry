@@ -23,7 +23,8 @@ function AddRecipe(props) {
       formState.name +
       formState.description +
       formState.steps +
-      formState.ingredients
+      formState.ingredients+
+      formState.category
     );
     event.preventDefault();
     const mutationResponse = await addRecipe({
@@ -32,7 +33,7 @@ function AddRecipe(props) {
         description: formState.description,
         steps: formState.steps,
         ingredients: formState.ingredients,
-        category: formState.category,
+        category: formState.category.value,
       },
     });
     const token = mutationResponse.data.addRecipe.token;
