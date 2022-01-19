@@ -63,6 +63,7 @@ const resolvers = {
       console.log(args);
       const recipe = await Recipe.create(args);
       console.log(recipe);
+      console.log(context);
       await User.findByIdAndUpdate(context.user._id, { $push: { recipes: recipe } });
       return recipe._id;
       // const token = signToken(user)
