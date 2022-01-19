@@ -14,9 +14,10 @@ import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
+
 import { StoreProvider } from "./utils/GlobalState";
 import MyRecipes from "./pages/MyRecipes";
-
+import AddRecipe from "./pages/AddRecipe";
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -49,6 +50,7 @@ function App() {
               <Route exact path='/signup' component={Signup} />
               <Route exact path='/recipes/:id' component={Detail} />
               <Route exact path='/MyRecipes' component={MyRecipes} />
+              <Route exact path='/AddRecipe' component={AddRecipe} />
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>

@@ -12,7 +12,6 @@ function RecipeItem(item) {
   return (
     <div className='card px-1 py-1'>
       <Link to={`/recipes/${_id}`}>
-        <img src={''}  alt={name} />
         <p>{name}</p>
       </Link>
     </div>
