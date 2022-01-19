@@ -9,8 +9,6 @@ export const QUERY_RECIPES = gql`
       username
       steps
       ingredients
-      category
-
       category {
         _id
       }
@@ -50,6 +48,10 @@ export const QUERY_USER = gql`
         _id
         name
         description
+        quantity
+        category {
+          name
+        }
         steps
         ingredients
         createdAt

@@ -33,25 +33,16 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    recipes(category: ID, name: String): [Recipe]
+    recipes(category: ID): [Recipe]
     recipe(_id: ID!): Recipe
     user: User
   }
 
   type Mutation {
-    addUser(
-      firstName: String!
-      lastName: String!
-      email: String!
-      password: String!
-    ): Auth
-    updateUser(
-      firstName: String
-      lastName: String
-      email: String
-      password: String
-    ): User
-    updateRecipe(_id: ID!): Recipe
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    addRecipe(name: String, description: String, image: String): Recipe
+    updateRecipe(_id: ID!, quantity: Int!): Recipe
     login(email: String!, password: String!): Auth
   }
 `;

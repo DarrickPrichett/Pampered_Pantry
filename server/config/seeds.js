@@ -10,14 +10,13 @@ db.once('open', async () => {
     { name: 'Lunch' },
     { name: 'Dinner' },
     { name: 'Deserts' },
-    { name: 'Italian' }
   ]);
 
   console.log('categories seeded');
 
   await Recipe.deleteMany();
 
-  const Recipes = await Recipe.insertMany([
+  const recipes = await Recipe.insertMany([
     {
       name: 'Cream of Wheat',
       description: 'The best tasting breakfast food.',

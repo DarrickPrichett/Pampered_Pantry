@@ -54,6 +54,8 @@ function Detail() {
           <h2>{currentRecipe.name}</h2>
 
           <p>{currentRecipe.description}</p>
+          <p>{currentRecipe.steps}</p>
+          <p>{currentRecipe.ingredients}</p>
           {/* 
           <img
             src={`/images/${currentRecipe.image}`}

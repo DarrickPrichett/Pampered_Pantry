@@ -42,7 +42,7 @@ function CategoryMenu() {
   };
 
   return (
-    <div>
+    <div className = 'recipe-box'>
       <h2>Choose a Category:</h2>
       {categories.map((item) => (
         <button

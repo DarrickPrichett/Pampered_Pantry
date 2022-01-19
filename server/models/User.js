@@ -44,6 +44,10 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
+// userSchema.virtual("username").get(function(){
+//   return this.firstName+" "+this.lastName
+// })
+
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
