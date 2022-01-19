@@ -37,6 +37,20 @@ db.once('open', async () => {
       category: categories[3]._id,
       steps: 'Brussel sprouts in tasty food out',
       ingredients: 'All the sprouts'
+    },
+    {
+      name: 'Tomato Pie',
+      description: 'Great for brunch, appetizer, or side dish',
+      category: categories[1]._id,
+      steps: 'Bake pastry shell at 425 degrees for 5 minutes. Reduce oven to 400 degrees. Cover bottom of crust with tomatoes. Sprinkle with spices and chives. Spread with cheese and mayonnaise, sealing edge carefully. Bake 35 minutes',
+      ingredients: '1 9” unbaked pastry shell 3 medium tomatoes, peeled and thickly sliced ½ t salt ¼ t pepper ½ t basil ¼ C chives ¼ C mayonnaise 1 ½ C grated sharp cheddar'
+    },
+    {
+      name: 'Spicy Tomato Soup from Elsah Landing',
+      description: 'Hearty and warming',
+      category: categories[3]._id,
+      steps: 'Combine all ingredients in large pot. Crush tomatoes with potato masher. Cover & simmer at least 30 minutes. Garnish each serving with pat of butter if desired.',
+      ingredients: '8 c chicken broth (or 3 T chicken stock base in 8 c. water) 2 large cans (28 oz each) tomatoes or 4- 1 lb cans 1 8 oz can tomato sauce 4 onion bouillon cubes 2 T minced dried onions 4 T dried parsley 4 bay leaves 2 t basil 2 t paprika 2 t sugar ½ t ground cloves ½ t nutmeg ½ t pepper'
     }
   ]);
 
