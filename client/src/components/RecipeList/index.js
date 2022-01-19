@@ -5,7 +5,7 @@ import { UPDATE_RECIPES } from "../../utils/actions";
 import { useQuery } from "@apollo/client";
 import { QUERY_RECIPES } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
-import spinner from "../../assets/spinner.gif";
+import Skeleton from "@mui/material/Skeleton";
 
 function RecipeList() {
   const [state, dispatch] = useStoreContext();
@@ -46,8 +46,8 @@ console.log(currentCategory);
   }
 
   return (
-    <div className='my-2 recipe-box'>
-      <h2>Our Recipes:</h2>
+    <>
+          <h2>Our Recipes:</h2>
       {state.recipes.length ? (
         <div className='flex-row'>
           {filterRecipes().map((recipe) => (
@@ -62,8 +62,8 @@ console.log(currentCategory);
       ) : (
         <h3>No Recipes have been added yet!</h3>
       )}
-      {loading ? <img src={spinner} alt='loading' /> : null}
-    </div>
+      {loading ? <Skeleton variant="rectangular"/> : null}
+    </>
   );
 }
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_RECIPE } from "../utils/mutations";
-
+import {TextField, Button} from "@mui/material";
 function AddRecipe(props) {
   const [formState, setFormState] = useState({
     name: "",
@@ -46,47 +46,68 @@ function AddRecipe(props) {
       <h2>Add Recipe</h2>
       <form onSubmit={handleFormSubmit}>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='name'>Recipe Name:</label>
-          <input
+      
+          <TextField
+           label="Recipe Name"
+    
             placeholder='Recipe'
             name='name'
             type='name'
             id='name'
+            variant='standard'
             onChange={handleChange}
+            sx={{width:"100%"}}
+
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='description'>Description:</label>
-          <input
+ 
+          <TextField
+          multiline
+          label='description'
             placeholder='description'
             name='description'
             type='description'
             id='description'
+            variant='standard'
             onChange={handleChange}
+            sx={{width:"100%"}}
+
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='steps'>Steps:</label>
-          <input
+  
+          <TextField
+          label='Recipe Steps'
+          multiline
             placeholder='Recipe Steps'
             name='steps'
             type='steps'
             id='steps'
             onChange={handleChange}
+            variant='standard'
+            sx={{width:"100%"}}
+
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='ingredients'>Ingredients:</label>
-          <input
+            <TextField
+            sx={{width:"100%"}}
+
+label ='ingredients'
+            multiline
             placeholder='ingredients'
             name='ingredients'
             type='ingredients'
             id='ingredients'
             onChange={handleChange}
+            variant='standard'
           />
         </div>
         <div className='flex-row flex-end'>
-          <button type='submit'>Submit</button>
+          <Button type='submit'
+            variant="contained"
+            color="warning">Submit</Button>
         </div>
       </form>
     </div>
