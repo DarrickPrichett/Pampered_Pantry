@@ -5,7 +5,7 @@ import Auth from "../utils/auth";
 import { ADD_RECIPE } from "../utils/mutations";
 import { QUERY_CATEGORIES } from "../utils/queries";
 
-import {TextField, Button, Select, MenuItem} from "@mui/material";
+import {TextField, Button, Select, MenuItem, FormLabel} from "@mui/material";
 function AddRecipe(props) {
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
   const allCategories = categoryData?.categories||[]
@@ -118,12 +118,13 @@ label ='ingredients'
           />
         </div>
         <div className='flex-row space-between my-2'>
+          <FormLabel>Category:</FormLabel>
           <Select onChange={handleChange}
           label="Category:"
           name='category'
           type='category'
-          placeholder='Category'
-          id='category'
+          placeholder= 'category'
+                    id='category'
           variant='standard'
           >
             {allCategories?.map(category => (
