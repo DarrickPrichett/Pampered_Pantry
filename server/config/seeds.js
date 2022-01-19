@@ -79,6 +79,20 @@ db.once('open', async () => {
       steps: 'Prepare lettuce & mix with Prosciutto or bacon, cheeses, & green onions. ½ hour before serving, toss with dressing & let stand at room temperature to let flavors develop. ',
       ingredients: '1 head iceberg lettuce 1 head Romaine lettuce tear lettuces into bite-sized pieces ¼-1/3 lb Provolone cheese, shredded 1/8 c Romano cheese, grated ¼ c Parmesan cheese, grated ¼ lb Prosciutto ham, chopped & sautéed (we prefer crisp bacon –use 1 lb & crumble) 1 bunch green onions or scallions, chopped 1 pkg Good Seasons Italian dressing mix, prepared as directed EXCEPT use olive oil—only ½ c (less than mix calls for), use white wine vinegar & add 2 T sugar. Prepare & refrigerate.'
     },
+    {
+      name: 'Crustless Spinach Quiche',
+      description: 'This is like Stouffers’ Spinach Quiche',
+      category: categories[1]._id,
+      steps: 'Preheat oven to 350 degrees. Butter 9: pie plate. Heat oil in skillet over medium heat. Add onion and sauté until wited. Add spinach; cook until excess moisture is evaporated. Let cool. Beat eggs in bowl, add cheese. Stir into spinach mixture and season to taste with salt and pepper. Turn into pie plate, spreading evenly. Bake until top is nicely browned and tester comes out clean—40-50 minutes. 6 servings',
+      ingredients: '1 T oil 1 large onion, chopped 10 oz. pkg. frozen spinach, thawed and squeezed to remove as much moisture as possible. 5 eggs ¾ lb. Swiss or Muenster cheese, grated Salt and freshly ground pepper'
+    },
+    {
+      name: 'Milky Way Wonder Cake',
+      description: 'A family favorite',
+      category: categories[4]._id,
+      steps: 'Melt ½ C butter and candy bars on slow heat. Beat remaining ½ C butter, eggs, and sugar. Beat well. Add flour &  baking soda alternately with buttermilk until smooth. Add candy mixture and mix well. Stir in nuts and vanilla. Pour into well-greased and floured tube pan and bake at 350 degrees for 1 hour and 20 minutes. ',
+      ingredients: '6 Milky Way bars 1 C butter 4 eggs 2 ½ C sifted flour ½ t baking soda 2 C sugar 1 ¼ C buttermilk 1 t vanilla 1 C chopped nuts       '
+    },
   ]);
 
   console.log('Recipes seeded');
