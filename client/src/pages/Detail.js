@@ -48,7 +48,7 @@ function Detail() {
   return (
     <>
       {currentRecipe ? (
-        <div className='container my-1 recipe-box'>
+        <div className='container my-1 '>
           <Link to='/'>← Back to Recipes</Link>
 
           <h2>{currentRecipe.name}</h2>

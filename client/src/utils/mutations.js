@@ -17,14 +17,14 @@ export const ADD_RECIPE = gql`
     $description: String!
     $steps: String!
     $ingredients: String!
-    $category_id: ID!
+    $category: ID!
   ) {
     addRecipe(
       name: $name
       description: $description
       steps: $steps
       ingredients: $ingredients
-      category_id: $category_id
+      category: $category
     ) {
       _id
     }
