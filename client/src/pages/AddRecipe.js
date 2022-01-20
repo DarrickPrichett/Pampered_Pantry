@@ -5,7 +5,7 @@ import Auth from "../utils/auth";
 import { ADD_RECIPE } from "../utils/mutations";
 import { QUERY_CATEGORIES } from "../utils/queries";
 
-import {TextField, Button} from "@mui/material";
+import {TextField, Button, Select, MenuItem, FormLabel} from "@mui/material";
 function AddRecipe(props) {
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
   const allCategories = categoryData?.categories||[]
@@ -23,7 +23,8 @@ function AddRecipe(props) {
       formState.name +
       formState.description +
       formState.steps +
-      formState.ingredients
+      formState.ingredients+
+      formState.category
     );
     event.preventDefault();
     const mutationResponse = await addRecipe({
@@ -32,7 +33,7 @@ function AddRecipe(props) {
         description: formState.description,
         steps: formState.steps,
         ingredients: formState.ingredients,
-        category_id: formState.category_id,
+        category: formState.category,
       },
     });
     const token = mutationResponse.data.addRecipe.token;
@@ -47,15 +48,7 @@ function AddRecipe(props) {
     });
   };
 
-  const handleCategory = (event) => {
-    const select = event.target
-    const category = select.options[select.selectedIndex].value
-    console.log(category)
-    setFormState({
-      ...formState,
-      category_id: category,
-    });
-  }
+  
   return (
     <div className='container my-1'>
       <h2 className="bold">Add Recipe</h2>
@@ -125,13 +118,20 @@ label ='ingredients'
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label className="recipe-box" htmlFor='category'>Category:</label>
-          <select onChange={handleCategory}>
+          <FormLabel>Category:</FormLabel>
+          <Select onChange={handleChange}
+          label="Category:"
+          name='category'
+          type='category'
+          placeholder= 'category'
+                    id='category'
+          variant='standard'
+          >
             {allCategories?.map(category => (
-               <option value={category._id}>{category.name}</option>
+               <MenuItem value={category._id}>{category.name}</MenuItem>
             ))}
            
-          </select>
+          </Select>
         </div>
 
         <div className='flex-row flex-end'>

@@ -10,9 +10,15 @@ function Nav() {
           <li className='mx-1'>
             <Link to={"/addRecipe"}>Add Recipe</Link>
           </li>
+<<<<<<< HEAD
           <li className='mx-1'>
             <Link to={'/myRecipes'}>My Recipes</Link>
           </li>
+=======
+         { /* <li className='mx-1'>
+            <Link to='/myRecipes'>My Recipes</Link>
+      </li> */}
+>>>>>>> b9def8cf4289b9c78a8f4376fff18227f45412f5
 
           <li className='mx-1'>
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
