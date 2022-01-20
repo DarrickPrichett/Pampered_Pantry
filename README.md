@@ -68,6 +68,6 @@ Patricia Nelson - [PNelson@LinkedIn](https://www.linkedin.com/in/p-nelson/) - ur
 ## Project Links: 
 [GitHub Repository](https://github.com/DarrickPrichett/Pampered_Pantry)
 
-[Heroku](https://git.heroku.com/pamperedpantry.git)
+[Heroku](http://pamperedpantry.herokuapp.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
