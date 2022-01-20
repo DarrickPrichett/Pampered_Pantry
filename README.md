@@ -58,7 +58,7 @@ This space to show useful examples of how our project can be used. Additional sc
 
 <!-- CONTACT -->
 ## Contact
-Darrick Prichett - [https://github.com/DarrickPrichett](https://www.linkedin.com/linkedin_handle) - darrickprichett@gmail.com
+Darrick Prichett - [@DarrickPrichett](https://github.com/DarrickPrichett) - darrickprichett@gmail.com
 
 Douglas Peterson - [@LinkedIn_handle](https://www.linkedin.com/linkedin_handle) - douglaspeterson6@gmail.com
 
