@@ -3,10 +3,8 @@
 <br />
 <div align="center">
   <a href="https://github.com/DarrickPrichett/Pampered_Pantry">
-    <img src="" alt="Logo" width="80" height="80">
+    <h1> 🧑‍🍳 🥘 <br/> Pampered Pantry </h1>
   </a>
-
-<h3 align="center">Pampered Pantry</h3>
 
   <p align="center">
     Recipes from our family to yours
@@ -35,7 +33,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Screen Shot 2022-01-19 at 6 33 17 PM](https://user-images.githubusercontent.com/85598391/150241289-6aaee5ad-d436-4a11-bb05-4b188ebe0a79.png)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -60,7 +59,7 @@ This space to show useful examples of how our project can be used. Additional sc
 ## Contact
 Darrick Prichett - [@DarrickPrichett](https://github.com/DarrickPrichett) - darrickprichett@gmail.com
 
-Douglas Peterson - [@LinkedIn_handle](https://www.linkedin.com/linkedin_handle) - douglaspeterson6@gmail.com
+Douglas Peterson - [douglas-peterson@linkedIn](https://www.linkedin.com/in/douglas-peterson) - douglaspeterson6@gmail.com
 
 Dustin Turpin - [@dustinturp](https://github.com/dustinturp) - 
 
