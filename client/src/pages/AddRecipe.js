@@ -1,24 +1,29 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_RECIPE } from "../utils/mutations";
+import { QUERY_CATEGORIES } from "../utils/queries";
+
 import {TextField, Button} from "@mui/material";
 function AddRecipe(props) {
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+  const allCategories = categoryData?.categories||[]
   const [formState, setFormState] = useState({
     name: "",
     description: "",
     steps: "",
     ingredients: "",
+    category_id: "",
   });
   const [addRecipe] = useMutation(ADD_RECIPE);
   console.log(addRecipe);
   const handleFormSubmit = async (event) => {
     console.log(
       formState.name +
-        formState.description +
-        formState.steps +
-        formState.ingredients
+      formState.description +
+      formState.steps +
+      formState.ingredients
     );
     event.preventDefault();
     const mutationResponse = await addRecipe({
@@ -27,6 +32,7 @@ function AddRecipe(props) {
         description: formState.description,
         steps: formState.steps,
         ingredients: formState.ingredients,
+        category_id: formState.category_id,
       },
     });
     const token = mutationResponse.data.addRecipe.token;
@@ -41,15 +47,24 @@ function AddRecipe(props) {
     });
   };
 
+  const handleCategory = (event) => {
+    const select = event.target
+    const category = select.options[select.selectedIndex].value
+    console.log(category)
+    setFormState({
+      ...formState,
+      category_id: category,
+    });
+  }
   return (
     <div className='container my-1'>
-      <h2>Add Recipe</h2>
+      <h2 className="bold">Add Recipe</h2>
       <form onSubmit={handleFormSubmit}>
         <div className='flex-row space-between my-2'>
-      
+
           <TextField
            label="Recipe Name"
-    
+
             placeholder='Recipe'
             name='name'
             type='name'
@@ -61,10 +76,12 @@ function AddRecipe(props) {
           />
         </div>
         <div className='flex-row space-between my-2'>
+
  
           <TextField
           multiline
           label='description'
+
             placeholder='description'
             name='description'
             type='description'
@@ -76,10 +93,12 @@ function AddRecipe(props) {
           />
         </div>
         <div className='flex-row space-between my-2'>
+
   
           <TextField
           label='Recipe Steps'
           multiline
+
             placeholder='Recipe Steps'
             name='steps'
             type='steps'
@@ -91,6 +110,7 @@ function AddRecipe(props) {
           />
         </div>
         <div className='flex-row space-between my-2'>
+
             <TextField
             sx={{width:"100%"}}
 
@@ -104,6 +124,16 @@ label ='ingredients'
             variant='standard'
           />
         </div>
+        <div className='flex-row space-between my-2'>
+          <label className="recipe-box" htmlFor='category'>Category:</label>
+          <select onChange={handleCategory}>
+            {allCategories?.map(category => (
+               <option value={category._id}>{category.name}</option>
+            ))}
+           
+          </select>
+        </div>
+
         <div className='flex-row flex-end'>
           <Button type='submit'
             variant="contained"

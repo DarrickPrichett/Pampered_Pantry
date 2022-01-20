@@ -28,11 +28,16 @@ const recipeSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  category: {
+  category_id: {
     type: Schema.Types.ObjectId,
     ref: "Category",
-    //required: true,
+    required: true,
   },
+  user_id: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  }
 });
 
 const Recipe = mongoose.model("Recipe", recipeSchema);

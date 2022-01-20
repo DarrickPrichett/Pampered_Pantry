@@ -35,12 +35,14 @@ function Login(props) {
     <div className="container my-1">
       <Link to="/signup">← Go to Signup</Link>
 
-      <h2>Login</h2>
+      <h2 className='bold'>Login</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
+
           <TextField
           label="Email:"
           variant='standard'
+
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -49,9 +51,11 @@ function Login(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
+
           <TextField
           label='Password:'
           variant='standard'
+
             placeholder="******"
             name="password"
             type="password"

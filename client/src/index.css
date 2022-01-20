@@ -204,6 +204,7 @@ input:focus {
 
 body {
   background-image: url(./image/landing\ -page.jpg);
+  background-size: cover;
 }
 
 .recipe-box {
@@ -211,7 +212,10 @@ body {
   border: 2px solid black;
   padding: 5px;
   margin-top: 5px;
+}
 
+.bold {
+  font-weight: bold;
 }
 @media screen and (max-width: 768px) {
   .card {
