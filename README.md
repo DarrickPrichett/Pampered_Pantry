@@ -51,7 +51,9 @@
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This space to show useful examples of how our project can be used. Additional screenshots...
+As a user I want to log into my family cookbook DB recipe page.
+I want to add a recipe to the database.
+I want to view other user's recipes.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
